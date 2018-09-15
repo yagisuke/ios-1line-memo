@@ -51,6 +51,7 @@
                     </view>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="644" y="1"/>
         </scene>
     </scenes>
 </document>
