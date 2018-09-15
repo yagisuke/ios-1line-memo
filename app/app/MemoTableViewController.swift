@@ -10,11 +10,7 @@ import UIKit
 
 class MemoTableViewController: UITableViewController {
 
-    var memos =  [
-        ["title": "t1", "detail": "d1"],
-        ["title": "t2", "detail": "d2"],
-        ["title": "t3", "detail": "d3"]
-    ]
+    var memos =  ["blue", "red", "pink"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +43,7 @@ class MemoTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoTableViewCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.memos[indexPath.row]["title"]
-        cell.detailTextLabel?.text = self.memos[indexPath.row]["detail"]
+        cell.textLabel?.text = self.memos[indexPath.row]
 
         return cell
     }
