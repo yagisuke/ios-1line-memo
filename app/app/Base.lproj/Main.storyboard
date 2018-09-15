@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoTableViewCell" textLabel="cS7-LM-oaC" style="IBUITableViewCellStyleDefault" id="H1q-rH-ddN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MemoTableViewCell" textLabel="cS7-LM-oaC" style="IBUITableViewCellStyleDefault" id="H1q-rH-ddN">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H1q-rH-ddN" id="ASz-Jr-Jo2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cS7-LM-oaC">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -35,6 +35,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="editMemo" id="22M-iu-Tj7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -69,6 +72,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="memoTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="moH-EJ-Jgt"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,7 +87,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Memo" id="Yge-b7-uyt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2RH-eo-pM7"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2RH-eo-pM7">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="XTO-hd-NYZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sgl-rV-ExE">
                             <connections>
                                 <segue destination="S3h-sl-xEd" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="oyK-S5-92c"/>
@@ -94,7 +104,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2522.4000000000001" y="0.44977511244377816"/>
+            <point key="canvasLocation" x="2404" y="1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hd5-iC-3el">
@@ -112,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9b-0r-9Oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103.2" y="1.3493253373313345"/>
+            <point key="canvasLocation" x="57" y="1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k9f-LM-h5Z">
@@ -130,7 +140,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeU-uN-4B9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583.2" y="0.44977511244377816"/>
+            <point key="canvasLocation" x="1622" y="367"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="22M-iu-Tj7"/>
+    </inferredMetricsTieBreakers>
 </document>
