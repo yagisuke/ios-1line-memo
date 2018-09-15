@@ -85,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="memoTextField" destination="8bC-Xf-vdC" id="Yw5-0X-Mov"/>
+                        <outlet property="saveButton" destination="Sgl-rV-ExE" id="yKR-5I-ipo"/>
                     </connections>
                 </viewController>
             </objects>
