@@ -10,7 +10,10 @@ import UIKit
 
 class MemoTableViewController: UITableViewController {
 
-    var memos =  ["one", "tow", "thuree"]
+    var memos =  [
+        ["blue", "red", "pink"],
+        ["yagi", "carlos"]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +34,25 @@ class MemoTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.memos.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.memos.count
+        return self.memos[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoTableViewCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.memos[indexPath.row]
+        cell.textLabel?.text = self.memos[indexPath.section][indexPath.row]
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "section-\(section)"
     }
 
     /*
