@@ -35,7 +35,7 @@ class MemoTableViewController: UITableViewController {
         } else {
             self.memos = ["create new memo."]
         }
-        
+        self.userDefaults.set(self.memos, forKey: "memos")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -82,6 +82,7 @@ class MemoTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             self.memos.remove(at: indexPath.row)
+            self.userDefaults.set(self.memos, forKey: "memos")
             tableView.deleteRows(at: [indexPath], with: .fade)
         }    
     }
