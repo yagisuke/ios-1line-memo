@@ -12,7 +12,7 @@ class MemoViewController: UIViewController {
 
     var memo: String?
 
-    @IBOutlet weak var memoTextField: UITextView!
+    @IBOutlet weak var memoTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
 

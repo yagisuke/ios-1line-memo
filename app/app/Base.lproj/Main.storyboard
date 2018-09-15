@@ -57,6 +57,7 @@
         <!--New Memo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <exit id="S3h-sl-xEd" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MemoViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
@@ -81,10 +82,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Memo" id="Yge-b7-uyt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2RH-eo-pM7"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sgl-rV-ExE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Sgl-rV-ExE">
+                            <connections>
+                                <segue destination="S3h-sl-xEd" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="oyK-S5-92c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="memoTextField" destination="8bC-Xf-vdC" id="Yw5-0X-Mov"/>
+                        <outlet property="memoTextField" destination="fpi-UI-uwf" id="Tte-cT-Wsr"/>
                         <outlet property="saveButton" destination="Sgl-rV-ExE" id="yKR-5I-ipo"/>
                     </connections>
                 </viewController>
